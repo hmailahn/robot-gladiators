@@ -102,8 +102,9 @@ var startGame = function () {
     break;
   }
 }
-//play again
-startGame();
+
+//after the lopp ends, player is either out of health or emnemies to fight, so run the endGame function
+endGame();
 };
 
 //function to end the entire game
@@ -115,7 +116,19 @@ var endGame = function () {
   else {
   window.alert("You've lost your robot in battle.");
 }
+
+
+//ask player if they'd like to play again
+var playAgainConfirm = window.confirm("Would you like to play again?");
+
+if (playAgainConfirm) {
+  //restart the game 
+  startGame();
 }
+else {
+  window.alert("Thank you for playing Robot Gladiators! Come back soon!");
+}
+};
 
 
 //start the game when the page loads 
